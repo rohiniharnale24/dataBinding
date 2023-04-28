@@ -1,0 +1,126 @@
+<!-- //here we are transfering data within the same componentsts
+//transfer data from ts to template
+//1).string interpolation 
+//2).property binding -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <!-- <p>Product Name is : {{ productName }}</p>
+      <p>Product id is :{{ getProductId() }}</p> -->
+      <div class="mt-4">
+        <h2 class="bg-info text-white text-center">Property Binding</h2>
+        <div class="form-group">
+          <label for="pname">Product Name</label>
+          <!-- here value is predefined property -->
+          <!-- .value , innerHtml,innerText,innerContext these are the property of dom object -->
+          <!-- <input
+            type="text"
+            name=""
+            id="pname"
+            [value]="'iPhone'"
+            [value]="productName"
+            class="form-control"
+          /> -->
+          <input
+            type="text"
+            name=""
+            id="pname"
+            [value]="productName"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="pId">Product Id</label>
+          <input
+            type="text"
+            [value]="getProductId()"
+            name=""
+            id="pId"
+            class="form-control"
+          />
+        </div>
+        <!-- <div class="div">
+          <button class="btn btn-primary">submit</button>
+        </div> -->
+      </div>
+      <div class="mt-4" *ngFor="let std of studentsArray">
+        <p>Student Name is {{ std.fname }}</p>
+        <p>Student lastname is {{ std.lname }}</p>
+      </div>
+      <div>
+        <p>
+          {{ productName }}
+        </p>
+        <p>
+          {{ getProductId() }}
+        </p>
+      </div>
+    </div>
+
+    <div class="col-sm-6 mt-4">
+      <h2 class="bg-success text-center text-white">Event Binding</h2>
+      <div class="form-group">
+        <div class="alert alert-info">{{ productStaus }}</div>
+        <button class="btn btn-primary mb-4 mr-2" (click)="getProductStatus()">
+          Add Product
+        </button>
+        <button
+          class="btn btn-danger text-right mb-4"
+          [disabled]="noOfProduct === 0"
+          (click)="removeProduct()"
+        >
+          Delete Product
+        </button>
+        <h6>Using event binding</h6>
+        <label for="pname">product name</label>
+        <!-- //here $event definds input event -->
+
+        <input
+          type="text"
+          name=""
+          id="pname"
+          (input)="onKeyup($event)"
+          class="form-control"
+        />
+
+        <P>
+          {{ searchProductName }}
+        </P>
+      </div>
+      <h6>Using ngModel</h6>
+      <div>
+        <input
+          type="text"
+          name=""
+          id="pname"
+          [(ngModel)]="searchProductName"
+          class="form-control"
+        />
+        <P>
+          {{ searchProductName }}
+        </P>
+        <!-- Attribute Directive -->
+        <p
+          [ngStyle]="{
+            'background-color': getBgColor()
+          }"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero
+          consequuntur atque saepe vel soluta, architecto officia similique
+          numquam quibusdam consequatur.
+        </p>
+        <p
+          [ngStyle]="{
+            backgroundColor: getBgColor()
+          }"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero
+          consequuntur atque saepe vel soluta, architecto officia similique
+          numquam quibusdam consequatur.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->
