@@ -10,6 +10,8 @@ export class AppComponent implements OnInit {
   ProductId: string = '123ert45555';
   productStaus: string = 'No Product Is added Yet...';
   noOfProduct: number = 0;
+  noOfProduct3: number = 0;
+  noOfProduct2: number = 0;
   searchProductName!: string;
 
   studentsArray = [
